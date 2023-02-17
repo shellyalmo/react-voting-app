@@ -1,53 +1,62 @@
 import React, { useState } from "react";
 import Wrapper from "../styles/styled/Login.styled";
 import votingLogo from "../assets/images/voting-logo.png";
-const Login = () => {
+const Login = ({ setLogin }) => {
+  const [userEmail, setuserEmail] = useState("");
+  const [userPassword, setuserPassword] = useState("");
+
   return (
     <Wrapper>
-      <img src={votingLogo} alt="Voting App Logo" />
-      <h1>Voting App</h1>
-      <Form setParentState={console.log} />
+      <div className="login-page">
+        <div className="left-login-page">
+          <div className="logo">
+            <img src={votingLogo} alt="" />
+            <h1>Voting App</h1>
+          </div>
+          <div className="login-container">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = {
+                  userEmail,
+                  userPassword,
+                };
+                setLogin(formData);
+              }}
+            >
+              <label htmlFor="userEmail">Email: </label>
+              <input
+                type="email"
+                name="userEmail"
+                value={userEmail}
+                required
+                autoComplete="email"
+                onChange={(e) => {
+                  setuserEmail(e.target.value);
+                }}
+              />
+              <label htmlFor="userPassword">Password: </label>
+              <input
+                type="password"
+                name="userPassword"
+                value={userPassword}
+                required
+                onChange={(e) => {
+                  setuserPassword(e.target.value);
+                }}
+              />
+              <button>Login</button>
+            </form>
+          </div>
+        </div>
+        <div className="right-login-page">
+          <img
+            src="https://img.freepik.com/free-vector/character-illustration-people-with-vote-icons_53876-43035.jpg?w=2000"
+            alt=""
+          />
+        </div>
+      </div>
     </Wrapper>
-  );
-};
-
-const Form = (props) => {
-  const [username, setusername] = useState("");
-  const [email, setemail] = useState("");
-  // callback func from App - setData
-  const setParentState = props.setParentState;
-  return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        const formData = {
-          username,
-          email,
-        };
-        setParentState(formData);
-      }}
-    >
-      <label htmlFor="userName">User Name: </label>
-      <input
-        type="text"
-        name="userName"
-        value={username}
-        onChange={(e) => {
-          setusername(e.target.value);
-        }}
-      />
-      <br />
-      <label htmlFor="email">Email: </label>
-      <input
-        type="email"
-        name="email"
-        value={email}
-        onChange={(e) => {
-          setemail(e.target.value);
-        }}
-      />
-      <button type="submit">Continue</button>
-    </form>
   );
 };
 
