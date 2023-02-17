@@ -7,6 +7,9 @@ const Wrapper = styled.section`
     border: 1px solid black;
     width: 200px;
   }
+  .candidate-card-chosen {
+    background-color: green;
+  }
   .candidate-card img {
     width: 100px;
   }

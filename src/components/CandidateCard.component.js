@@ -1,13 +1,19 @@
 import React from "react";
 
 const CandidateCard = ({ candidateName, candidateImg, setVote, vote }) => {
+  const isChosen =
+    vote === candidateName
+      ? "candidate-card candidate-card-chosen"
+      : "candidate-card";
+  const hasVoted = typeof vote === "string";
+
   return (
-    <div className="candidate-card">
+    <div className={isChosen}>
       <h1 className="candidate-name">{candidateName}</h1>
       <img src={candidateImg} alt={candidateName} />
       <button
         className="vote-btn"
-        disabled={typeof vote === "string"}
+        disabled={hasVoted}
         type=""
         onClick={(e) => {
           setVote(candidateName);
