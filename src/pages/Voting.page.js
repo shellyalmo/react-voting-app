@@ -1,5 +1,6 @@
 import React from "react";
 import Wrapper from "../styles/styled/Voting.styled";
+import CandidateCard from "../components/CandidateCard.component";
 
 import ironman from "../assets/images/ironman.png";
 import thor from "../assets/images/thor.png";
@@ -10,34 +11,13 @@ const Voting = () => {
   return (
     <Wrapper>
       <div>
-        <div className="candidate-card">
-          <h1 className="candidate-name">Iron Man</h1>
-          <img src={ironman} alt="Iron Man" />
-          <button className="vote-btn" type="">
-            Vote
-          </button>
-        </div>
-        <div className="candidate-card">
-          <h1 className="candidate-name">Thor</h1>
-          <img src={thor} alt="Thor" />
-          <button className="vote-btn" type="">
-            Vote
-          </button>
-        </div>
-        <div className="candidate-card">
-          <h1 className="candidate-name">Hulk</h1>
-          <img src={hulk} alt="Hulk" />
-          <button className="vote-btn" type="">
-            Vote
-          </button>
-        </div>
-        <div className="candidate-card">
-          <h1 className="candidate-name">Captain America</h1>
-          <img src={captainamerica} alt="Captain America" />
-          <button className="vote-btn" type="">
-            Vote
-          </button>
-        </div>
+        <CandidateCard candidateName={"Iron Man"} candidateImg={ironman} />
+        <CandidateCard candidateName={"Thor"} candidateImg={thor} />
+        <CandidateCard candidateName={"Hulk"} candidateImg={hulk} />
+        <CandidateCard
+          candidateName={"Captain America"}
+          candidateImg={captainamerica}
+        />
       </div>
     </Wrapper>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { checkUserInDb } from "./api/login";
-import LoginError from "./components/LoginError";
+import LoginError from "./components/LoginError.component";
 import Login from "./pages/Login.page";
 import Voting from "./pages/Voting.page";
 import "./styles/App.css";
