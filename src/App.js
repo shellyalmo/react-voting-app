@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { checkUserInDb } from "./api/login";
 import LoginError from "./components/LoginError";
 import Login from "./pages/Login.page";
+import Voting from "./pages/Voting.page";
 import "./styles/App.css";
 
 function App() {
@@ -18,8 +19,16 @@ function App() {
 
   return (
     <div className="App">
-      <Login setLogin={setloginData}></Login>
-      {userFromDB === undefined ? <LoginError /> : ""}
+      {userFromDB === undefined ? (
+        <div>
+          <Login setLogin={setloginData}></Login>
+          <LoginError></LoginError>
+        </div>
+      ) : userFromDB ? (
+        <Voting></Voting>
+      ) : (
+        <Login setLogin={setloginData}></Login>
+      )}
     </div>
   );
 }
