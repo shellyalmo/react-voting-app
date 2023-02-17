@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { checkUserInDb } from "./api/login";
 import Login from "./pages/Login.page";
 import "./styles/App.css";
