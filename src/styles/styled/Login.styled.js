@@ -1,42 +1,32 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-  display: grid;
-  align-items: center;
   .logo {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 1.38rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
-  .form {
-    max-width: 400px;
-    border-top: 5px solid var(--red-dark);
+  .logo > img {
+    width: 200px;
   }
-  h3 {
-    text-align: center;
+
+  .login-container > form {
+    margin-left: 10rem;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
   }
-  p {
-    margin: 0;
-    margin-top: 1rem;
-    text-align: center;
+  .login-container button {
+    width: 50px;
   }
-  .btn {
-    margin-top: 1rem;
+
+  .login-page {
+    display: flex;
+    justify-content: space-around;
   }
-  .btn-light {
-    background: var(--white);
-    color: var(--red-dark);
-  }
-  .btn-light:hover {
-    background: var(--grey-50);
-    color: var(--black);
-  }
-  .member-btn {
-    background: transparent;
-    border: transparent;
-    color: var(--red-dark);
-    cursor: pointer;
-    letter-spacing: var(--letterSpacing);
+
+  .right-login-page img {
+    width: 700px;
   }
 `;
 
