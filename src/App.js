@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { checkUserInDb } from "./api/login";
 import Login from "./pages/Login.page";
 import "./styles/App.css";
@@ -6,13 +6,14 @@ import "./styles/App.css";
 function App() {
   const [loginData, setloginData] = useState(null);
   const [userFromDB, setuserFromDB] = useState(null);
-  //TODO: let user try again after bad login
 
-  //only check user in db if it hasn't happened yet
-  if (loginData && userFromDB === null) {
-    const dbResult = checkUserInDb(loginData);
-    setuserFromDB(dbResult);
-  }
+  //only check user in db if it hasn't happened yet and rerender only if login data changed
+  useEffect(() => {
+    if (loginData) {
+      const dbResult = checkUserInDb(loginData);
+      setuserFromDB(dbResult);
+    }
+  }, [loginData]);
 
   return (
     <div className="App">

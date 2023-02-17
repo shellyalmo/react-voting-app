@@ -42,6 +42,7 @@ const Login = ({ setLogin }) => {
                 name="userEmail"
                 value={userEmail}
                 required
+                autoComplete="email"
                 onChange={(e) => {
                   setuserEmail(e.target.value);
                 }}
