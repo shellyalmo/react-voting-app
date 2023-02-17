@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Wrapper from "../styles/styled/Login.styled";
 import votingLogo from "../assets/images/voting-logo.png";
 const Login = ({ setLogin }) => {
-  const [userName, setuserName] = useState("");
   const [userEmail, setuserEmail] = useState("");
   const [userPassword, setuserPassword] = useState("");
 
@@ -19,23 +18,12 @@ const Login = ({ setLogin }) => {
               onSubmit={(e) => {
                 e.preventDefault();
                 const formData = {
-                  userName,
                   userEmail,
                   userPassword,
                 };
                 setLogin(formData);
               }}
             >
-              <label htmlFor="userName">User Name: </label>
-              <input
-                type="text"
-                name="userName"
-                value={userName}
-                required
-                onChange={(e) => {
-                  setuserName(e.target.value);
-                }}
-              />
               <label htmlFor="userEmail">Email: </label>
               <input
                 type="email"

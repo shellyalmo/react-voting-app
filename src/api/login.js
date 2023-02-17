@@ -2,21 +2,17 @@ import { users } from "./usersData";
 
 /**
  *
- * @param {{userName: String, userEmail:String, userPassword:String}} user
+ * @param {{userEmail:String, userPassword:String}} user
  * @returns {{id: String,name: String,password: String,type: String,email: String}|undefined}
  */
 export const checkUserInDb = (user) => {
   return users.find(
-    (el) =>
-      el.name === user.userName &&
-      el.email === user.userEmail &&
-      el.password === user.userPassword
+    (el) => el.email === user.userEmail && el.password === user.userPassword
   );
 };
 
 console.assert(
   checkUserInDb({
-    userName: "ytfr",
     userEmail: "shellyalmo@gmail.com",
     userPassword: "hioiu",
   }) === undefined,
@@ -25,7 +21,6 @@ console.assert(
 
 console.assert(
   checkUserInDb({
-    userName: "John Doe",
     userEmail: "johndoe@gmail.com",
     userPassword: "7GTHPPL",
   }),
@@ -34,7 +29,6 @@ console.assert(
 
 console.assert(
   checkUserInDb({
-    userName: "John Doe",
     userEmail: "johndoe@gmail.com",
     userPassword: "7GTHPP4",
   }) === undefined,
@@ -43,7 +37,6 @@ console.assert(
 
 console.assert(
   checkUserInDb({
-    userName: "John Doe",
     userEmail: "johndoe@gmai.com",
     userPassword: "7GTHPPL",
   }) === undefined,
@@ -52,7 +45,6 @@ console.assert(
 
 console.assert(
   checkUserInDb({
-    userName: "Tomas Smith",
     userEmail: "tomas19@aol.com",
     userPassword: "9YSLDWL",
   }),
