@@ -8,13 +8,13 @@ const Login = ({ setLogin }) => {
 
   return (
     <Wrapper>
-      <div class="login-page">
-        <div class="left-login-page">
-          <div class="logo">
+      <div className="login-page">
+        <div className="left-login-page">
+          <div className="logo">
             <img src={votingLogo} alt="" />
             <h1>Voting App</h1>
           </div>
-          <div class="login-container">
+          <div className="login-container">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -26,7 +26,7 @@ const Login = ({ setLogin }) => {
                 setLogin(formData);
               }}
             >
-              <label for="userName">User Name: </label>
+              <label htmlFor="userName">User Name: </label>
               <input
                 type="text"
                 name="userName"
@@ -36,7 +36,7 @@ const Login = ({ setLogin }) => {
                   setuserName(e.target.value);
                 }}
               />
-              <label for="userEmail">Email: </label>
+              <label htmlFor="userEmail">Email: </label>
               <input
                 type="email"
                 name="userEmail"
@@ -46,7 +46,7 @@ const Login = ({ setLogin }) => {
                   setuserEmail(e.target.value);
                 }}
               />
-              <label for="userPassword">Password: </label>
+              <label htmlFor="userPassword">Password: </label>
               <input
                 type="password"
                 name="userPassword"
@@ -60,7 +60,7 @@ const Login = ({ setLogin }) => {
             </form>
           </div>
         </div>
-        <div class="right-login-page">
+        <div className="right-login-page">
           <img
             src="https://img.freepik.com/free-vector/character-illustration-people-with-vote-icons_53876-43035.jpg?w=2000"
             alt=""

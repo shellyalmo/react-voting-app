@@ -5,7 +5,7 @@ import { users } from "./usersData";
  * @param {{userName: String, userEmail:String, userPassword:String}} user
  * @returns {{id: String,name: String,password: String,type: String,email: String}|undefined}
  */
-const checkUserInDb = (user) => {
+export const checkUserInDb = (user) => {
   return users.find(
     (el) =>
       el.name === user.userName &&
