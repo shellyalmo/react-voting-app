@@ -17,17 +17,19 @@ function App() {
     }
   }, [loginData]);
 
+  const isWrongLoginData = userFromDB === undefined;
+  const isFirstLoad = userFromDB === null;
+  const isNotLoggedIn = isFirstLoad || isWrongLoginData;
+
   return (
     <div className="App">
-      {userFromDB === undefined ? (
+      {isNotLoggedIn ? (
         <div>
           <Login setLogin={setloginData}></Login>
-          <LoginError></LoginError>
+          {isWrongLoginData ? <LoginError></LoginError> : undefined}
         </div>
-      ) : userFromDB ? (
-        <Voting></Voting>
       ) : (
-        <Login setLogin={setloginData}></Login>
+        <Voting></Voting>
       )}
     </div>
   );
