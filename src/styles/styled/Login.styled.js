@@ -16,6 +16,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     width: 200px;
   }
+
   .login-container button {
     width: 50px;
   }
