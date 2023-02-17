@@ -12,28 +12,28 @@ const Voting = () => {
       <div>
         <div className="candidate-card">
           <h1 className="candidate-name">Iron Man</h1>
-          <img src={ironman} alt="Iron Man photo" />
+          <img src={ironman} alt="Iron Man" />
           <button className="vote-btn" type="">
             Vote
           </button>
         </div>
         <div className="candidate-card">
           <h1 className="candidate-name">Thor</h1>
-          <img src={thor} alt="Thor photo" />
+          <img src={thor} alt="Thor" />
           <button className="vote-btn" type="">
             Vote
           </button>
         </div>
         <div className="candidate-card">
           <h1 className="candidate-name">Hulk</h1>
-          <img src={hulk} alt="Hulk photo" />
+          <img src={hulk} alt="Hulk" />
           <button className="vote-btn" type="">
             Vote
           </button>
         </div>
         <div className="candidate-card">
           <h1 className="candidate-name">Captain America</h1>
-          <img src={captainamerica} alt="Captain America photo" />
+          <img src={captainamerica} alt="Captain America" />
           <button className="vote-btn" type="">
             Vote
           </button>
