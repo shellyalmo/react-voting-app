@@ -31,6 +31,7 @@ const Login = ({ setLogin }) => {
                 type="text"
                 name="userName"
                 value={userName}
+                required
                 onChange={(e) => {
                   setuserName(e.target.value);
                 }}
@@ -40,6 +41,7 @@ const Login = ({ setLogin }) => {
                 type="email"
                 name="userEmail"
                 value={userEmail}
+                required
                 onChange={(e) => {
                   setuserEmail(e.target.value);
                 }}
@@ -49,6 +51,7 @@ const Login = ({ setLogin }) => {
                 type="password"
                 name="userPassword"
                 value={userPassword}
+                required
                 onChange={(e) => {
                   setuserPassword(e.target.value);
                 }}
