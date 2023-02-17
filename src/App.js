@@ -25,11 +25,11 @@ function App() {
     <div className="App">
       {isNotLoggedIn ? (
         <div>
-          <Login setLogin={setloginData}></Login>
-          {isWrongLoginData ? <LoginError></LoginError> : undefined}
+          <Login setLogin={setloginData} />
+          {isWrongLoginData ? <LoginError /> : undefined}
         </div>
       ) : (
-        <Voting></Voting>
+        <Voting userFromDB={userFromDB} />
       )}
     </div>
   );

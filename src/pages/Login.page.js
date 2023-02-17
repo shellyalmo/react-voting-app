@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Wrapper from "../styles/styled/Login.styled";
 import votingLogo from "../assets/images/voting-logo.png";
+
 const Login = ({ setLogin }) => {
   const [userEmail, setuserEmail] = useState("");
   const [userPassword, setuserPassword] = useState("");
