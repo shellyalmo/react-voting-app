@@ -11,7 +11,14 @@ const Voting = ({ userFromDB, candidates, setCandidates }) => {
       <div>
         <div className="navbar">
           <h1>Welcome, {userFromDB.name}</h1>
-          <button type="">Logout</button>
+          <button
+            type=""
+            onClick={() => {
+              window.location.reload(false);
+            }}
+          >
+            Logout
+          </button>
         </div>
         <div className="candidates-board">
           {candidates
