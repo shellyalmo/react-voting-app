@@ -5,12 +5,12 @@ const Admin = ({ candidates }) => {
   return (
     <div>
       <h3 style={{ textAlign: "center" }}>Users Votes Summary: </h3>
-      <div>
+      <h4 style={{ border: "1px solid black", width: "15rem" }}>
         Total # votes:{" "}
         {candidates.reduce((acc, curr) => {
           return acc + curr.voters.length;
         }, 0)}
-      </div>
+      </h4>
       <table style={{ textAlign: "left" }}>
         <thead>
           <tr>

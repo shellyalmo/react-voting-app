@@ -12,13 +12,7 @@ import Admin from "./pages/Admin.page";
 
 function App() {
   const [loginData, setloginData] = useState(null);
-  const [userFromDB, setuserFromDB] = useState({
-    id: "9pL5E1wC8V",
-    name: "Alice Lee",
-    password: "2NDJYFL",
-    type: "admin",
-    email: "alicelee@gmail.com",
-  });
+  const [userFromDB, setuserFromDB] = useState(null);
   const [candidates, setCandidates] = useState([
     {
       name: "Iron Man",
@@ -47,7 +41,7 @@ function App() {
   const isWrongLoginData = userFromDB === undefined;
   const isFirstLoad = userFromDB === null;
   const isNotLoggedIn = isFirstLoad || isWrongLoginData;
-  const isAdmin = userFromDB.type === "admin";
+  const isAdmin = userFromDB && userFromDB.type === "admin";
 
   return (
     <div className="App">
