@@ -1,43 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Wrapper from "../styles/styled/Voting.styled";
+import CandidateCard from "../components/CandidateCard.component";
 
-import ironman from "../assets/images/ironman.png";
-import thor from "../assets/images/thor.png";
-import hulk from "../assets/images/hulk.png";
-import captainamerica from "../assets/images/captainamerica.png";
+const Voting = ({ userFromDB, candidates, setCandidates }) => {
+  const [vote, setVote] = useState(null);
+  const [isDoneVoting, setisDoneVoting] = useState(false);
 
-const Voting = () => {
   return (
     <Wrapper>
-      <div>
-        <div className="candidate-card">
-          <h1 className="candidate-name">Iron Man</h1>
-          <img src={ironman} alt="Iron Man" />
-          <button className="vote-btn" type="">
-            Vote
-          </button>
-        </div>
-        <div className="candidate-card">
-          <h1 className="candidate-name">Thor</h1>
-          <img src={thor} alt="Thor" />
-          <button className="vote-btn" type="">
-            Vote
-          </button>
-        </div>
-        <div className="candidate-card">
-          <h1 className="candidate-name">Hulk</h1>
-          <img src={hulk} alt="Hulk" />
-          <button className="vote-btn" type="">
-            Vote
-          </button>
-        </div>
-        <div className="candidate-card">
-          <h1 className="candidate-name">Captain America</h1>
-          <img src={captainamerica} alt="Captain America" />
-          <button className="vote-btn" type="">
-            Vote
-          </button>
-        </div>
+      <div className="candidates-board">
+        {candidates
+          .sort((a, b) => {
+            return b.numVotes - a.numVotes;
+          })
+          .map((candidate) => (
+            <CandidateCard
+              key={candidate.name}
+              candidateName={candidate.name}
+              candidateImg={candidate.img}
+              setVote={setVote}
+              vote={vote}
+              setisDoneVoting={setisDoneVoting}
+              isDoneVoting={isDoneVoting}
+              numVotes={candidate.numVotes}
+              setCandidates={setCandidates}
+            />
+          ))}
       </div>
     </Wrapper>
   );

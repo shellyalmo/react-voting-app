@@ -1,0 +1,201 @@
+{
+    "title": "badso then goodso",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 911,
+            "height": 592,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "http://localhost:3000/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://localhost:3000/",
+                    "title": "Voting App"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=email]:nth-child(2)"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 110.4000015258789
+        },
+        {
+            "type": "change",
+            "value": "shelly@gam.com",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=email]:nth-child(2)"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=password]:nth-child(4)"
+                ]
+            ],
+            "offsetY": 15.79998779296875,
+            "offsetX": 109.4000015258789
+        },
+        {
+            "type": "change",
+            "value": "2",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=password]:nth-child(4)"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > button"
+                ],
+                [
+                    "text/Login"
+                ]
+            ],
+            "offsetY": 12.600006103515625,
+            "offsetX": 38.400001525878906
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=email]:nth-child(2)"
+                ],
+                [
+                    "text/shelly@gam.com"
+                ]
+            ],
+            "offsetY": 9,
+            "offsetX": 87.4000015258789
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=email]:nth-child(2)"
+                ],
+                [
+                    "text/shelly@gam.com"
+                ]
+            ],
+            "offsetY": 9,
+            "offsetX": 87.4000015258789
+        },
+        {
+            "type": "change",
+            "value": "",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=email]:nth-child(2)"
+                ],
+                [
+                    "text/shelly@gam.com"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=email]:nth-child(2)"
+                ]
+            ],
+            "offsetY": 9,
+            "offsetX": 87.4000015258789
+        },
+        {
+            "type": "change",
+            "value": "tomas19@aol.com",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=email]:nth-child(2)"
+                ],
+                [
+                    "text/shelly@gam.com"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=password]:nth-child(4)"
+                ],
+                [
+                    "text/2"
+                ]
+            ],
+            "offsetY": 4.79998779296875,
+            "offsetX": 76.4000015258789
+        },
+        {
+            "type": "change",
+            "value": "1",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > input[type=password]:nth-child(4)"
+                ],
+                [
+                    "text/2"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page"
+                ],
+                [
+                    "text/Voting AppEmail:"
+                ]
+            ],
+            "offsetY": 354,
+            "offsetX": 253.4000015258789
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > section > div > div.left-login-page > div.login-container > form > button"
+                ],
+                [
+                    "text/Login"
+                ]
+            ],
+            "offsetY": 16.600006103515625,
+            "offsetX": 35.400001525878906
+        }
+    ]
+}
