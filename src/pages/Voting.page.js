@@ -8,37 +8,24 @@ const Voting = ({ userFromDB, candidates, setCandidates }) => {
 
   return (
     <Wrapper>
-      <div>
-        <div className="navbar">
-          <h1>Welcome, {userFromDB.name}</h1>
-          <button
-            type=""
-            onClick={() => {
-              window.location.reload(false);
-            }}
-          >
-            Logout
-          </button>
-        </div>
-        <div className="candidates-board">
-          {candidates
-            .sort((a, b) => {
-              return b.numVotes - a.numVotes;
-            })
-            .map((candidate) => (
-              <CandidateCard
-                key={candidate.name}
-                candidateName={candidate.name}
-                candidateImg={candidate.img}
-                setVote={setVote}
-                vote={vote}
-                setisDoneVoting={setisDoneVoting}
-                isDoneVoting={isDoneVoting}
-                numVotes={candidate.numVotes}
-                setCandidates={setCandidates}
-              />
-            ))}
-        </div>
+      <div className="candidates-board">
+        {candidates
+          .sort((a, b) => {
+            return b.numVotes - a.numVotes;
+          })
+          .map((candidate) => (
+            <CandidateCard
+              key={candidate.name}
+              candidateName={candidate.name}
+              candidateImg={candidate.img}
+              setVote={setVote}
+              vote={vote}
+              setisDoneVoting={setisDoneVoting}
+              isDoneVoting={isDoneVoting}
+              numVotes={candidate.numVotes}
+              setCandidates={setCandidates}
+            />
+          ))}
       </div>
     </Wrapper>
   );

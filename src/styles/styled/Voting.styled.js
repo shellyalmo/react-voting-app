@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: grey;
-    color: white;
-  }
   .candidate-card {
     display: flex;
     flex-direction: column;

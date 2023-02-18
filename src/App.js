@@ -27,13 +27,12 @@ function App() {
     },
   ]);
 
-  //only check user in db if it hasn't happened yet and rerender only if login data changed
-  useEffect(() => {
-    if (loginData) {
-      const dbResult = checkUserInDb(loginData);
+  if (loginData) {
+    const dbResult = checkUserInDb(loginData);
+    if (!Object.is(dbResult, userFromDB)) {
       setuserFromDB(dbResult);
     }
-  }, [loginData]);
+  }
 
   const isWrongLoginData = userFromDB === undefined;
   const isFirstLoad = userFromDB === null;
@@ -41,6 +40,28 @@ function App() {
 
   return (
     <div className="App">
+      {!isNotLoggedIn && (
+        <nav
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            backgroundColor: "grey",
+            color: "white",
+          }}
+        >
+          <h1>Welcome, {userFromDB.name}</h1>
+          <button
+            type=""
+            onClick={() => {
+              setloginData(null);
+              setuserFromDB(null);
+            }}
+          >
+            Logout
+          </button>
+        </nav>
+      )}
       {isNotLoggedIn ? (
         <div>
           <Login setLogin={setloginData} />
