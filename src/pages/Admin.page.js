@@ -5,6 +5,12 @@ const Admin = ({ candidates }) => {
   return (
     <div>
       <h3 style={{ textAlign: "center" }}>Users Votes Summary: </h3>
+      <div>
+        Total # votes:{" "}
+        {candidates.reduce((acc, curr) => {
+          return acc + curr.voters.length;
+        }, 0)}
+      </div>
       <table style={{ textAlign: "left" }}>
         <thead>
           <tr>
@@ -15,17 +21,17 @@ const Admin = ({ candidates }) => {
         </thead>
         <tbody>
           {users.map((el) => {
+            const hasVoted = candidates.some((candidate) => {
+              return candidate.voters.includes(el.name);
+            });
             return (
-              <tr key={el.email}>
+              <tr
+                style={{ color: hasVoted ? "green" : "black" }}
+                key={el.email}
+              >
                 <td>{el.name}</td>
                 <td>{el.email}</td>
-                <td>
-                  {candidates.some((candidate) => {
-                    return candidate.voters.includes(el.name);
-                  })
-                    ? "yes"
-                    : "no"}
-                </td>
+                <td>{hasVoted ? "yes" : "no"}</td>
               </tr>
             );
           })}
