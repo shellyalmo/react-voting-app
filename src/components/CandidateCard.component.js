@@ -9,6 +9,7 @@ const CandidateCard = ({
   vote,
   setisDoneVoting,
   numVotes = 0,
+  setCandidates,
 }) => {
   const isChosen = vote === candidateName;
   const cardStyle = isChosen
@@ -24,12 +25,18 @@ const CandidateCard = ({
 
       <img src={candidateImg} alt={candidateName} />
       {isChosen ? (
-        <ConfirmVote setVote={setVote} setisDoneVoting={setisDoneVoting} />
+        <ConfirmVote
+          setVote={setVote}
+          setisDoneVoting={setisDoneVoting}
+          candidateName={candidateName}
+          setCandidates={setCandidates}
+        />
       ) : (
         <VoteBtn
           hasVoted={hasVoted}
           candidateName={candidateName}
           setVote={setVote}
+          setCandidates={setCandidates}
         />
       )}
     </div>
