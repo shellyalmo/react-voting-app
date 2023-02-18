@@ -46,7 +46,7 @@ console.assert(
 console.assert(
   checkUserInDb({
     userEmail: "tomas19@aol.com",
-    userPassword: "9YSLDWL",
+    userPassword: "1",
   }),
   "Thomas is in db"
 );

@@ -1,12 +1,14 @@
 import React from "react";
 
-const ConfirmVote = ({ setVote }) => {
+const ConfirmVote = ({ setVote, setisDoneVoting }) => {
   return (
     <div>
       <button type="" onClick={() => setVote(null)}>
         Change Vote
       </button>
-      <button type="">Done</button>
+      <button type="" onClick={() => setisDoneVoting(true)}>
+        Done
+      </button>
     </div>
   );
 };

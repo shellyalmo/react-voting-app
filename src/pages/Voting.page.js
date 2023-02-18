@@ -9,35 +9,30 @@ import captainamerica from "../assets/images/captainamerica.png";
 
 const Voting = ({ userFromDB }) => {
   const [vote, setVote] = useState(null);
+  const [isDoneVoting, setisDoneVoting] = useState(false);
 
   return (
     <Wrapper>
       <div>
         <h1>Welcome, {userFromDB.name}</h1>
-        <CandidateCard
-          candidateName={"Iron Man"}
-          candidateImg={ironman}
-          setVote={setVote}
-          vote={vote}
-        />
-        <CandidateCard
-          candidateName={"Thor"}
-          candidateImg={thor}
-          setVote={setVote}
-          vote={vote}
-        />
-        <CandidateCard
-          candidateName={"Hulk"}
-          candidateImg={hulk}
-          setVote={setVote}
-          vote={vote}
-        />
-        <CandidateCard
-          candidateName={"Captain America"}
-          candidateImg={captainamerica}
-          setVote={setVote}
-          vote={vote}
-        />
+        <div>
+          {[
+            { name: "Iron Man", img: ironman },
+            { name: "Thor", img: thor },
+            { name: "Hulk", img: hulk },
+            { name: "Captain America", img: captainamerica },
+          ].map((candidate) => (
+            <CandidateCard
+              key={candidate.name}
+              candidateName={candidate.name}
+              candidateImg={candidate.img}
+              setVote={setVote}
+              vote={vote}
+              setisDoneVoting={setisDoneVoting}
+              isDoneVoting={isDoneVoting}
+            />
+          ))}
+        </div>
       </div>
     </Wrapper>
   );
