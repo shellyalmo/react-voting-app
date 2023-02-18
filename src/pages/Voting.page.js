@@ -10,7 +10,13 @@ const Voting = ({ userFromDB, candidates, setCandidates }) => {
     <Wrapper>
       <div>
         <h1>Welcome, {userFromDB.name}</h1>
-        <div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateRows: "repeat(2,1fr",
+            gridTemplateColumns: "repeat(2,1fr",
+          }}
+        >
           {candidates
             .sort((a, b) => {
               return b.numVotes - a.numVotes;
