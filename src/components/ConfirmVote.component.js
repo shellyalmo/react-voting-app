@@ -5,6 +5,7 @@ const ConfirmVote = ({
   setisDoneVoting,
   setCandidates,
   candidateName,
+  userFromDB,
 }) => {
   return (
     <div>
@@ -24,7 +25,20 @@ const ConfirmVote = ({
       >
         Change Vote
       </button>
-      <button type="" onClick={() => setisDoneVoting(true)}>
+      <button
+        type=""
+        onClick={() => {
+          setisDoneVoting(true);
+          setCandidates((candidates) => {
+            return candidates.map((c) => {
+              if (c.name === candidateName) {
+                return { ...c, voters: [...c.voters, userFromDB.name] };
+              }
+              return c;
+            });
+          });
+        }}
+      >
         Done
       </button>
     </div>

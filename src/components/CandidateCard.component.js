@@ -11,6 +11,7 @@ const CandidateCard = ({
   isDoneVoting,
   numVotes = 0,
   setCandidates,
+  userFromDB
 }) => {
   const isChosen = vote === candidateName;
   const cardStyle = isChosen
@@ -26,6 +27,7 @@ const CandidateCard = ({
           setisDoneVoting={setisDoneVoting}
           candidateName={candidateName}
           setCandidates={setCandidates}
+          userFromDB={userFromDB}
         />
       );
     } else if (!isDoneVoting && !isChosen) {

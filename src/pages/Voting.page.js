@@ -24,6 +24,7 @@ const Voting = ({ userFromDB, candidates, setCandidates }) => {
               isDoneVoting={isDoneVoting}
               numVotes={candidate.numVotes}
               setCandidates={setCandidates}
+              userFromDB={userFromDB}
             />
           ))}
       </div>
