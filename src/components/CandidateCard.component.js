@@ -2,7 +2,14 @@ import React from "react";
 import VoteBtn from "./VoteBtn.component";
 import ConfirmVote from "./ConfirmVote.component";
 
-const CandidateCard = ({ candidateName, candidateImg, setVote, vote,setisDoneVoting }) => {
+const CandidateCard = ({
+  candidateName,
+  candidateImg,
+  setVote,
+  vote,
+  setisDoneVoting,
+  numVotes = 0,
+}) => {
   const isChosen = vote === candidateName;
   const cardStyle = isChosen
     ? "candidate-card candidate-card-chosen"
@@ -11,7 +18,10 @@ const CandidateCard = ({ candidateName, candidateImg, setVote, vote,setisDoneVot
 
   return (
     <div className={cardStyle}>
-      <h1 className="candidate-name">{candidateName}</h1>
+      <h1 className="candidate-name">
+        {candidateName} - {numVotes} votes
+      </h1>
+
       <img src={candidateImg} alt={candidateName} />
       {isChosen ? (
         <ConfirmVote setVote={setVote} setisDoneVoting={setisDoneVoting} />
